@@ -1,0 +1,21 @@
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+if humanoid then
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+end
+
+wait(0.2)
+
+spawn(function()  
+    while true do
+        humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(180), math.rad(80.827), math.rad(10))
+        wait()
+    end
+end)
+
+wait(1)
+humanoid.Health = 0 
