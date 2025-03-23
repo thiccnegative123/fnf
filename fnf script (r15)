@@ -1,0 +1,364 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "MADE BY HAXAREBEST";
+    Text = "EPIC FNF SCRIPT";
+    Duration = 5
+    })
+
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+local humanoidroot = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+--arrow 1
+local gui = Instance.new("ScreenGui", Game.Players.LocalPlayer.PlayerGui)
+local frame = Instance.new("Frame", gui)
+local button = Instance.new("TextButton", frame)
+local button1 = Instance.new("TextButton", frame)
+local button2 = Instance.new("TextButton", frame)
+--arrow 2
+local button3 = Instance.new("TextButton", frame)
+local button4 = Instance.new("TextButton", frame)
+local button5 = Instance.new("TextButton", frame)
+--arrow 3
+local button6 = Instance.new("TextButton", frame)
+local button7 = Instance.new("TextButton", frame)
+local button8 = Instance.new("TextButton", frame)
+--arrow 4
+local button9 = Instance.new("TextButton", frame)
+local button10 = Instance.new("TextButton", frame)
+local button11 = Instance.new("TextButton", frame)
+-- on/off
+local frame2 = Instance.new("Frame", gui)
+local button12 = Instance.new("TextButton", frame2)
+
+
+frame.Position = UDim2.new(0,898,0,323)
+frame.Size = UDim2.new(0.2,0.2,0.2)
+frame.Active = false
+
+frame2.Position = UDim2.new(0,898,0,323)
+frame2.Size = UDim2.new(0.2,0.2,0.2)
+frame2.Active = false
+
+button.Position = UDim2.new(0,-636,0,-335)
+button.Size = UDim2.new(0.3,0,0.2,0)
+button.Active = true
+button.Draggable = false
+button.Text = ""
+button.BackgroundColor3 = Color3.fromRGB(255,255,0)
+
+button1.Position = UDim2.new(0,-655,0,-344)
+button1.Size = UDim2.new(0.2,0,0.2,0)
+button1.Active = true
+button1.Draggable = false
+button1.Text = ""
+button1.Rotation = 1580
+button1.BackgroundColor3 = Color3.fromRGB(255,255,0)
+
+button2.Position = UDim2.new(0,-658,0,-325)
+button2.Size = UDim2.new(0.2,0,0.2,0)
+button2.Active = true
+button2.Draggable = false
+button2.Text = ""
+button2.Rotation = 780
+button2.BackgroundColor3 = Color3.fromRGB(255,255,0)
+
+button3.Position = UDim2.new(0,-551,0,-357)
+button3.Size = UDim2.new(0.3,0,0.2,0)
+button3.Active = true
+button3.Draggable = false
+button3.Text = ""
+button3.Rotation = 90
+button3.BackgroundColor3 = Color3.fromRGB(0,255,255)
+
+button4.Position = UDim2.new(0,-557,0,-338)
+button4.Size = UDim2.new(0.2,0,0.2,0)
+button4.Active = true
+button4.Draggable = false
+button4.Text = ""
+button4.Rotation = 40
+button4.BackgroundColor3 = Color3.fromRGB(0,225,225)
+
+button5.Position = UDim2.new(0,-529,0,-335)
+button5.Size = UDim2.new(0.2,0,0.2,0)
+button5.Active = true
+button5.Draggable = false
+button5.Text = ""
+button5.Rotation = 150
+button5.BackgroundColor3 = Color3.fromRGB(0,225,225)
+
+button6.Position = UDim2.new(0,-475,0,-341)
+button6.Size = UDim2.new(0.3,0,0.2,0)
+button6.Active = true
+button6.Draggable = false
+button6.Text = ""
+button6.Rotation = 90
+button6.BackgroundColor3 = Color3.fromRGB(0,255,0)
+
+button7.Position = UDim2.new(0,-451,0,-359)
+button7.Size = UDim2.new(0.2,0,0.2,0)
+button7.Active = true
+button7.Draggable = false
+button7.Text = ""
+button7.Rotation = 50
+button7.BackgroundColor3 = Color3.fromRGB(0,255,0)
+
+button8.Position = UDim2.new(0,-480,0,-358)
+button8.Size = UDim2.new(0.2,0,0.2,0)
+button8.Active = true
+button8.Draggable = false
+button8.Text = ""
+button8.Rotation = 130
+button8.BackgroundColor3 = Color3.fromRGB(0,255,0)
+
+button9.Position = UDim2.new(0,-386,0,-340)
+button9.Size = UDim2.new(0.3,0,0.2,0)
+button9.Active = true
+button9.Draggable = false
+button9.Text = ""
+button9.BackgroundColor3 = Color3.fromRGB(255,0,0)
+
+button10.Position = UDim2.new(0,-358,0,-355)
+button10.Size = UDim2.new(0.2,0,0.2,0)
+button10.Active = true
+button10.Draggable = false
+button10.Text = ""
+button10.Rotation = 50
+button10.BackgroundColor3 = Color3.fromRGB(255,0,0)
+
+button11.Position = UDim2.new(0,-352,0,-330)
+button11.Size = UDim2.new(0.2,0,0.2,0)
+button11.Active = true
+button11.Draggable = false
+button11.Text = ""
+button11.Rotation = 145
+button11.BackgroundColor3 = Color3.fromRGB(255,0,0)
+
+button12.Position = UDim2.new(0,-243,0,-344)
+button12.Size = UDim2.new(0.5,0,0.4,0)
+button12.Active = true
+button12.Draggable = true
+button12.Text = "on/off"
+button12.Rotation = 0
+button12.BackgroundColor3 = Color3.fromRGB(0,255,127)
+
+--Button functions
+
+button12.MouseButton1Click:Connect(function()
+if frame.Visible == true then
+frame.Visible = false
+elseif frame.Visible == false then
+frame.Visible = true
+end
+end)
+
+button3.MouseButton1Click:Connect(function()
+humanoid.Sit = true
+wait(0.21)
+humanoid.Sit = false
+end)
+
+button4.MouseButton1Click:Connect(function()
+humanoid.Sit = true
+wait(0.21)
+humanoid.Sit = false
+end)
+
+button5.MouseButton1Click:Connect(function()
+humanoid.Sit = true
+wait(0.21)
+humanoid.Sit = false
+end)
+
+button6.MouseButton1Click:Connect(function()
+humanoid.HipHeight = 5.4
+wait(0.2)
+humanoid.HipHeight = 1.998
+end)
+
+button7.MouseButton1Click:Connect(function()
+humanoid.HipHeight = 5.4
+wait(0.2)
+humanoid.HipHeight = 1.998
+end)
+
+button8.MouseButton1Click:Connect(function()
+humanoid.HipHeight = 5.4
+wait(0.2)
+humanoid.HipHeight = 1.998
+end)
+
+button.MouseButton1Click:Connect(function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+
+wait(0.15)
+
+humanoidRootPart.Anchored = true
+
+wait(2)
+
+humanoidRootPart.Anchored = false
+
+
+end)
+
+button1.MouseButton1Click:Connect(function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+
+wait(0.15)
+
+humanoidRootPart.Anchored = true
+
+wait(2)
+
+humanoidRootPart.Anchored = false
+
+
+end)
+
+button2.MouseButton1Click:Connect(function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+
+wait(0.15)
+
+humanoidRootPart.Anchored = true
+
+wait(2)
+
+humanoidRootPart.Anchored = false
+
+
+end)
+
+button9.MouseButton1Click:Connect(function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+
+wait(0.15)
+
+humanoidRootPart.Anchored = true
+
+wait(2)
+
+humanoidRootPart.Anchored = false
+
+end)
+
+button10.MouseButton1Click:Connect(function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+
+wait(0.15)
+
+humanoidRootPart.Anchored = true
+
+wait(2)
+
+humanoidRootPart.Anchored = false
+
+end)
+
+button11.MouseButton1Click:Connect(function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(-100), math.rad(-87.677), math.rad(-180))
+
+
+
+humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(math.rad(100), math.rad(87.677), math.rad(180))
+
+
+wait(0.15)
+
+humanoidRootPart.Anchored = true
+
+wait(2)
+
+humanoidRootPart.Anchored = false
+
+end)
