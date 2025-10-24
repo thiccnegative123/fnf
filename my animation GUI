@@ -1,0 +1,377 @@
+--locals
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+local lol = 1
+local lol1 = 1
+local lol2 = 1
+local lol3 = 1
+local lol4 = 1
+local floattrack
+local armtrack
+local crouchTrack
+local insanetrack
+local gui = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+gui.ResetOnSpawn = false
+local frame = Instance.new("Frame", gui)
+local frame1 = Instance.new("Frame", frame)
+local text1 = Instance.new("TextLabel", frame1)
+local text2 = Instance.new("TextLabel", frame1)
+local button = Instance.new("TextButton", frame)
+local button1 = Instance.new("TextButton", frame)
+local button2 = Instance.new("TextButton", frame)
+local button3 = Instance.new("TextButton", frame)
+local button4 = Instance.new("TextButton", frame)
+local button5 = Instance.new("TextButton", frame)
+local button6 = Instance.new("TextButton", frame)
+local button7 = Instance.new("TextButton", frame)
+local button8 = Instance.new("TextButton", frame)
+local next = Instance.new("TextButton", frame)
+local next1 = Instance.new("TextButton", frame)
+local back = Instance.new("TextButton", frame)
+local back1 = Instance.new("TextButton", frame)
+local text = Instance.new("TextLabel", frame)
+local credit = Instance.new("TextButton", frame)
+
+text.Size = UDim2.new(1,0,0.5,0)
+text.Position = UDim2.new(0.5,-183,0.5,-84)
+text.BackgroundColor3 = Color3.fromRGB(0,255,0)
+text.Draggable = false
+text.Active = false
+text.TextSize = 35
+text.BackgroundTransparency = 1
+text.TextColor3 = Color3.fromRGB(0,170,0)
+text.Text = "ANIMATION GUI"
+
+frame.Size = UDim2.new(0.4,0,0.4,0)
+frame.Position = UDim2.new(0.5,85,0.5,-226)
+frame.BackgroundColor3 = Color3.fromRGB(255,30,0)
+frame.Draggable = true
+frame.Active = true
+frame.BorderSizePixel = 0
+
+frame1.Size = UDim2.new(1,0,0.5,0)
+frame1.Position = UDim2.new(0.5,-183,0.5,71)
+frame1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+frame1.Draggable = false
+frame1.Active = true
+frame1.BorderSizePixel = 0
+frame1.Visible = false
+
+text1.Size = UDim2.new(0.4,0,0.4,0)
+text1.Position = UDim2.new(0.8,-183,0.5,-36)
+text1.BackgroundColor3 = Color3.fromRGB(255,30,0)
+text1.Draggable = false
+text1.Active = false
+text1.BackgroundTransparency = 1
+text1.TextSize = 20
+text1.TextColor3 = Color3.fromRGB(211,141,0)
+text1.Text = "MADE BY HAXAREBEST1"
+
+text2.Size = UDim2.new(0.4,0,0.4,0)
+text2.Position = UDim2.new(0.8,-181,0.5,0)
+text2.BackgroundColor3 = Color3.fromRGB(255,30,0)
+text2.Draggable = false
+text2.Active = false
+text2.BackgroundTransparency = 1
+text2.TextSize = 18
+text2.TextColor3 = Color3.fromRGB(255,0,0)
+text2.Text = "I MADE EVERYTHING ALONE"
+
+
+button.Size = UDim2.new(0.25,0,0.2,0)
+button.Position = UDim2.new(0.4,-129,0.5,-11)
+button.Active = true
+button.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button.Draggable = false
+button.Text = "Crouch (off)"
+
+button1.Size = UDim2.new(0.25,0,0.2,0)
+button1.Position = UDim2.new(0.6,-86,0.5,-11)
+button1.Active = true
+button1.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button1.Draggable = false
+button1.Text = "Insane(off)"
+
+button2.Size = UDim2.new(0.25,0,0.2,0)
+button2.Position = UDim2.new(0.6,30,0.5,-11)
+button2.Active = true
+button2.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button2.Draggable = false
+button2.Text = "head throw"
+
+button3.Size = UDim2.new(0.25,0,0.2,0)
+button3.Position = UDim2.new(0.4,-129,0.5,-11)
+button3.Active = true
+button3.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button3.Draggable = false
+button3.Text = "FAST PUNCHES"
+button3.Visible = false
+
+button4.Size = UDim2.new(0.25,0,0.2,0)
+button4.Position = UDim2.new(0.6,-86,0.5,-11)
+button4.Active = true
+button4.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button4.Draggable = false
+button4.Text = "punch 1"
+button4.Visible = false
+
+button5.Size = UDim2.new(0.25,0,0.2,0)
+button5.Position = UDim2.new(0.6,30,0.5,-11)
+button5.Active = true
+button5.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button5.Draggable = false
+button5.Text = "punch 2"
+button5.Visible = false
+
+button6.Size = UDim2.new(0.25,0,0.2,0)
+button6.Position = UDim2.new(0.4,-129,0.5,-11)
+button6.Active = true
+button6.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button6.Draggable = false
+button6.Text = "floating head(off)"
+button6.Visible = false
+
+button7.Size = UDim2.new(0.25,0,0.2,0)
+button7.Position = UDim2.new(0.6,-86,0.5,-11)
+button7.Active = true
+button7.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button7.Draggable = false
+button7.Text = "moon dance"
+button7.Visible = false
+
+button8.Size = UDim2.new(0.25,0,0.2,0)
+button8.Position = UDim2.new(0.6,30,0.5,-11)
+button8.Active = true
+button8.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button8.Draggable = false
+button8.Text = "arm rutine(off)"
+button8.Visible = false
+
+credit.Size = UDim2.new(0.7,0,0.2,0)
+credit.Position = UDim2.new(0.6,-165,0.5,41)
+credit.Active = true
+credit.BackgroundColor3 = Color3.fromRGB(255,255,255)
+credit.Draggable = false
+credit.Text = "CREDITS"
+
+next.Size = UDim2.new(0.1,0,0.2,0)
+next.Position = UDim2.new(0.6,110,0.5,41)
+next.Active = true
+next.BackgroundColor3 = Color3.fromRGB(0,255,255)
+next.Draggable = false
+next.Text = ">"
+
+next1.Size = UDim2.new(0.1,0,0.2,0)
+next1.Position = UDim2.new(0.6,110,0.5,41)
+next1.Active = true
+next1.BackgroundColor3 = Color3.fromRGB(0,255,255)
+next1.Draggable = false
+next1.Text = ">"
+next1.Visible = false
+
+back.Size = UDim2.new(0.1,0,0.2,0)
+back.Position = UDim2.new(0.6,-219,0.5,41)
+back.Active = true
+back.BackgroundColor3 = Color3.fromRGB(0,255,255)
+back.Draggable = false
+back.Text = "<"
+back.Visible = false
+
+back1.Size = UDim2.new(0.1,0,0.2,0)
+back1.Position = UDim2.new(0.6,-219,0.5,41)
+back1.Active = true
+back1.BackgroundColor3 = Color3.fromRGB(0,255,255)
+back1.Draggable = false
+back1.Text = "<"
+back1.Visible = false
+back1.Visible = false
+
+--button functions
+
+
+button.MouseButton1Click:Connect(function()
+    local humanoid = game.Players.LocalPlayer.Character.Humanoid
+    
+    if lol == 1 then
+        local anim = Instance.new("Animation")
+        anim.AnimationId = "rbxassetid://287325678"
+        crouchTrack = humanoid:LoadAnimation(anim)
+        crouchTrack:Play()
+humanoid.WalkSpeed = 10
+        lol = 0
+        button.Text = "Crouch (on)"
+    else
+        if crouchTrack then
+            crouchTrack:Stop()
+humanoid.WalkSpeed = 16
+        end
+        lol = 1
+        button.Text = "Crouch (off)"
+    end
+end)
+
+button1.MouseButton1Click:Connect(function()
+if lol1 == 1 then
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://33796059"
+insanetrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+insanetrack:Play()
+button1.Text = "Insane(on)"
+insanetrack:AdjustSpeed(100000)
+lol1 = 0
+else
+if insanetrack then
+insanetrack:Stop()
+button1.Text = "Insane(off)"
+end
+lol1 = 1
+end
+end)
+
+button2.MouseButton1Click:Connect(function()
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://35154961"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+track:Play()
+end)
+
+button3.MouseButton1Click:Connect(function()
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://126753849"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+track:Play()
+track:AdjustSpeed(5)
+wait(0.34)
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://126753849"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+track:Play()
+track:AdjustSpeed(5)
+wait(0.34)
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://126753849"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+track:Play()
+track:AdjustSpeed(5)
+end)
+
+button4.MouseButton1Click:Connect(function()
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://204062532"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+track:Play()
+track:AdjustSpeed(3)
+end)
+
+button5.MouseButton1Click:Connect(function()
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://218504594"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+track:Play()
+track:AdjustSpeed(3)
+end)
+
+button6.MouseButton1Click:Connect(function()
+    local humanoid = game.Players.LocalPlayer.Character.Humanoid
+    if lol3 == 1 then
+        local anim = Instance.new("Animation")
+        anim.AnimationId = "rbxassetid://121572214"
+        floattrack = humanoid:LoadAnimation(anim)
+        floattrack:Play()
+        button6.Text = "floating head(on)"
+        lol3 = 0
+    else
+        if floattrack then
+            floattrack:Stop()
+        end
+        button6.Text = "floating head(off)"
+        lol3 = 1
+    end
+end)
+
+button7.MouseButton1Click:Connect(function()
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://45834924"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+track:Play()
+end)
+
+button8.MouseButton1Click:Connect(function()
+    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return end
+
+    if lol4 == 1 then
+        local anim = Instance.new("Animation")
+        anim.AnimationId = "rbxassetid://259438880"
+        armtrack = humanoid:LoadAnimation(anim)
+        armtrack:Play()
+        armtrack:AdjustSpeed(2)
+        button8.Text = "arm rutine(on)"
+        lol4 = 0
+    else
+        if armtrack and armtrack.IsPlaying then
+            armtrack:Stop()
+        end
+        button8.Text = "arm rutine(off)"
+        lol4 = 1
+    end
+end)
+
+next.MouseButton1Click:Connect(function()
+	button.Visible = false
+	button1.Visible = false
+	button2.Visible = false
+	button3.Visible = true
+	button4.Visible = true
+	button5.Visible = true
+	next.Visible = false
+	back.Visible = true
+	next1.Visible = true
+end)
+
+back.MouseButton1Click:Connect(function()
+button.Visible = true
+button1.Visible = true
+button2.Visible = true
+button3.Visible = false
+button4.Visible = false
+button5.Visible = false
+next.Visible = true
+back.Visible = false
+next1.Visible = false
+end)
+
+credit.MouseButton1Click:Connect(function()
+if frame1.Visible then
+	frame1.Visible = false
+else
+	frame1.Visible = true
+end
+end)
+
+next1.MouseButton1Click:Connect(function()
+button.Visible = false
+button1.Visible = false
+button2.Visible = false
+button3.Visible = false
+button4.Visible = false
+button5.Visible = false
+button6.Visible = true
+button7.Visible = true
+button8.Visible = true
+next.Visible = false
+back.Visible = false
+next1.Visible = false
+back1.Visible = true
+end)
+
+back1.MouseButton1Click:Connect(function()
+button3.Visible = true
+button4.Visible = true
+button5.Visible = true
+button6.Visible = false
+button7.Visible = false
+button8.Visible = false
+next1.Visible = true
+back.Visible = true
+back1.Visible = false
+end)
