@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "MADE BY HAXAREBEST";
+    Title = "MADE BY HAXAREBEST2";
     Text = "EPIC FNF SCRIPT";
     Duration = 5
     })
